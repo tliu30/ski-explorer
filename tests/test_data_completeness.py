@@ -1,7 +1,7 @@
 import unittest
 
 from data.transit_times import read_default_transit_times
-from data.resorts import Resorts
+from data.resort import Resort
 
 
 class TestDataCompleteness(unittest.TestCase):
@@ -10,7 +10,7 @@ class TestDataCompleteness(unittest.TestCase):
         """Ensure that all the resorts are represented as destinations in transit file"""
         routes = read_default_transit_times()
 
-        expected_destinations = {x for x in Resorts}
+        expected_destinations = {x for x in Resort}
         found_destinations = {x.destination for x in routes}
         missing_destinations = expected_destinations.difference(found_destinations)
         self.assertSetEqual(

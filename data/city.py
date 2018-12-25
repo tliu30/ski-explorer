@@ -6,7 +6,7 @@ to travel.
 from enum import Enum
 
 
-class Cities(Enum):
+class City(Enum):
     BOSTON = 1
     NYC = 2
     NYC_AIR = 3   # e.g., NYC Airports (for rental info)

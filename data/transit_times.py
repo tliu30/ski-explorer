@@ -3,8 +3,8 @@ import logging
 import os
 from typing import Dict, List, MutableSequence, NamedTuple, Sequence, TextIO, Union
 
-from data.cities import Cities
-from data.resorts import Resorts
+from data.city import City
+from data.resort import Resort
 
 logger = logging.getLogger(__name__)
 
@@ -27,8 +27,8 @@ class TransitType(Enum):
 
 
 class TransitRoute(NamedTuple):
-    origin: Union[Cities, Resorts]
-    destination: Union[Cities, Resorts]
+    origin: Union[City, Resort]
+    destination: Union[City, Resort]
     transit_time: float
     transit_type: TransitType
 
@@ -48,9 +48,9 @@ def _read_simple_csv(filelike: TextIO, sep: str=',') -> List[Dict[str, str]]:
 
 def _parse_into_location(location_name: str, location_type: str) -> Enum:
     if location_type == 'CITY':
-        return Cities[location_name]
+        return City[location_name]
     elif location_type == 'RESORT':
-        return Resorts[location_name]
+        return Resort[location_name]
     else:
         raise ValueError('Did not recognize location_type found ({})'.format(location_type))
 

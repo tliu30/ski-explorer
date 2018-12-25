@@ -9,16 +9,16 @@ Will collect data on
 * travel times
 """
 
-importt datetime
+import datetime
 from typing import Collection
 
-from data.cities import Cities
-from data.resorts import Resorts
+from data.city import City
+from data.resort import Resort
 
 
 def run_info_gather(
-        origin_cities: Collection[Cities],
-        destination_resorts: Collection[Resorts],
+        origin_cities: Collection[City],
+        destination_resorts: Collection[Resort],
         start_date: datetime.date,
         end_date: datetime.date
 ):

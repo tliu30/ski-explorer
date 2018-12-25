@@ -1,6 +1,7 @@
 from enum import Enum
 
-class Resorts(Enum):
+
+class Resort(Enum):
     OKEMO = 1
     STOWE = 2
     JAY_PEAK = 3
