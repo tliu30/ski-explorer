@@ -3,8 +3,8 @@ import logging
 import os
 from typing import Dict, List, MutableSequence, NamedTuple, Sequence, TextIO, Union
 
-from settings.cities import Cities
-from settings.resorts import Resorts
+from data.cities import Cities
+from data.resorts import Resorts
 
 logger = logging.getLogger(__name__)
 

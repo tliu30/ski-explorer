@@ -3,8 +3,8 @@ from enum import Enum
 import logging
 from typing import Sequence, Tuple, Union
 
-from settings.cities import Cities
-from settings.resorts import Resorts
+from data.cities import Cities
+from data.resorts import Resorts
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +46,13 @@ def _get_date_in_kayak_url_format(datetime_obj: datetime) -> str:
     return datetime_obj.strftime('%Y-%m-%d-%Hh')
 
 
-def build_kayak_url(base_url: str, search_type: SearchType, location: Union[Cities, Resorts], start_datetime: datetime, end_datetime: datetime) -> str:
+def build_kayak_url(
+        base_url: str,
+        search_type: SearchType,
+        location: Union[Cities, Resorts],
+        start_datetime: datetime,
+        end_datetime: datetime
+) -> str:
     url_template = '{base_url}/{search_type}/{location_code}/{start_datetime}/{end_datetime}?{addl_kwargs}'
 
     formatted_url = url_template.format(

@@ -1,7 +1,7 @@
 import unittest
 
 from data.transit_times import read_default_transit_times
-from settings.resorts import Resorts
+from data.resorts import Resorts
 
 
 class TestDataCompleteness(unittest.TestCase):
